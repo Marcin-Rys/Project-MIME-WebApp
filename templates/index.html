@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Bota M.I.M.E</title>
+    <link href="./static/css/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-800 text-gray-200 antialiased">
+    <div class="min-h-screen flex flex-col items-center justify-center">
+        <h1  class="text-5xl font-bold text-cyan-400">M.I.M.E.</h1>
+        <p class="mt-2 text-lg text-gray-400">Panel Zarządzania botem</p>
+        <div class="mt-8">
+            {% if user %}
+            <!-- if user logged in-->
+             <div class="flex items-center justify-center">
+                <img src="https://cdn.discordapp.com/avatars/{{ user.id }}/{{ user.avatar }}.png" alt="Avatar" class="w-16 h-16 rounded-full">
+                <div class="ml-4 text-left">
+                    <p class="text-xl font-semibold">{{ user.username }}</p>
+                    <p class="text-sm text-gray-500">#{{ user.discriminator }}</p>
+                </div>
+             </div>
+             <a href="/lopout" class="block mt-6 text-sm text-red-400 hover:text-red-500">Wyloguj</a>
+             {% else %}
+             <!-- if user not logged in -->
+              <a href="/login/discord" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Zaloguj się z Discord</a>
+              {% endif %}
+        </div>
+    </div>
+   
+
+<script src="/static/js/htmx.min.js"></script>
+<script src="/static/js/datastar.js"></script>
+</body>
+</html>

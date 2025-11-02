@@ -1,0 +1,14 @@
+technical_scripts/*
+*.log
+venv/
+.venv/
+.env
+
+/static/css/input.css
+
+__pycache__/
+node_modules/
+*.sh
+package-lock.json
+package.json
+tailwind.config.js
